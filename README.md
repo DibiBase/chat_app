@@ -11,6 +11,6 @@ $ ninja -C build/
 ```
 # server
 $ build/src/chat_server
-# clinet
+# client
 $ build/src/chat_client
 ```
