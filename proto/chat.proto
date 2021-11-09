@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message ChatMessage {
+  int32 id = 1;
+  string from = 2;
+  string message = 3;
+}
+
+message AddMessage {
+  string from = 1;
+}
+
+message IdMessage {
+  int32 id = 1;
+}
+
+message Nothing {
+
+}
+
+service ChatService {
+  rpc chat(stream ChatMessage) returns (stream ChatMessage);
+  rpc add(AddMessage) returns (IdMessage);
+  rpc withdraw(ChatMessage) returns (Nothing);
+}
